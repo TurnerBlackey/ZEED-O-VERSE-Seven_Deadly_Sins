@@ -66,8 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
           let videoSrc = '';
           switch(i) {
             case 1:
-              videoSrc = "S2 E1"; // This will be the path to your uploaded video
-              break;
+              videoContainer.innerHTML = `
+                <video width="100%" height="100%" controls autoplay>
+                  <source src="S2 E1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              `;
+              return; // Exit early since we've already set the HTML
             case 12:
               videoSrc = "https://drive.google.com/file/d/1HA-hubN-nZlttuigD2jideiwin4VQHLN/preview";
               break;
@@ -79,19 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
               break;
           }
           
-          // Check if it's episode 1 (which will be a direct video file)
-          if (i === 1) {
-            videoContainer.innerHTML = `
-              <video width="100%" height="100%" controls autoplay>
-                <source src="${videoSrc}" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            `;
-          } else {
-            videoContainer.innerHTML = `
-              <iframe src="${videoSrc}" allow="autoplay" allowfullscreen></iframe>
-            `;
-          }
+          // For episodes other than 1, use iframe
+          videoContainer.innerHTML = `
+            <iframe src="${videoSrc}" allow="autoplay" allowfullscreen></iframe>
+          `;
         });
       }
       
