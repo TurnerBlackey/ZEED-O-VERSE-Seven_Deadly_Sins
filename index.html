@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seven Deadly Sins: Four Knights of the Apocalypse</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="SDS FKOA.png" alt="Seven Deadly Sins: Four Knights of the Apocalypse Logo">
+    </div>
+    <div class="zeed-logo">
+      <img src="Zeed.png" alt="Zeed Logo">
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search episodes...">
+      <button><i class="fas fa-search"></i></button>
+      <button id="themeToggle" class="theme-toggle">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1-8.313-12.454z"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="video-grid" id="videoGrid">
+      <!-- Video cards will be dynamically inserted here -->
+    </div>
+  </main>
+
+  <!-- Episode List Modal -->
+  <div id="episodeModal" class="episode-modal">
+    <div class="episode-content">
+      <span class="close">&times;</span>
+      <h2>Four Knights of the Apocalypse - Season 2</h2>
+      <div class="episode-list">
+        <!-- Episodes will be dynamically inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Player Modal -->
+  <div id="videoPlayerModal" class="video-player-modal">
+    <div class="video-player-content">
+      <span class="close-video">&times;</span>
+      <h2>Episode 12</h2>
+      <div class="video-player-container">
+        <iframe src="https://drive.google.com/file/d/1HA-hubN-nZlttuigD2jideiwin4VQHLN/preview" 
+                allow="autoplay" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
